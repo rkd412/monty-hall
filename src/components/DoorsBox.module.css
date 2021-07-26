@@ -1,0 +1,14 @@
+.doors-box {
+  background: pink;
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10vh;
+}
+
+@media screen and (max-width: 800px) {
+  .doors-box {
+    background: blue;
+  }
+}

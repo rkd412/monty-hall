@@ -1,0 +1,14 @@
+.door {
+  background: purple;
+  width: 20vw;
+  height: 60vh;
+}
+
+.image {
+  width: 20vw;
+  height: 60vh;
+}
+
+.door-text {
+  background: green;
+}
