@@ -1,10 +1,26 @@
 .doors-box {
-  background: pink;
+  background: snow;
   display: flex;
   justify-content: space-around;
   width: 100vw;
   height: 100vh;
   padding-top: 10vh;
+}
+
+.door {
+  background: grey;
+  width: 30vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  }
+
+.image {
+  width: 20vw;
+  height: 60vh;
+  margin: auto;
+  display: block;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 800px) {
