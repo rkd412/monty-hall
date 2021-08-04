@@ -7,13 +7,23 @@
   padding-top: 10vh;
 }
 
-.door {
-  background: grey;
-  width: 30vw;
-  height: 80vh;
+.active-door {
+  background: yellow;
+  width: 21vw;
+  height: 61vh;
   display: flex;
   justify-content: center;
-  }
+  z-index: 9999;
+}
+
+.inactive-door {
+  background: grey;
+  width: 21vw;
+  height: 61vh;
+  display: flex;
+  justify-content: center;
+  z-index: 9999;
+}
 
 .image {
   width: 20vw;
@@ -21,6 +31,7 @@
   margin: auto;
   display: block;
   cursor: pointer;
+  z-index: -1;
 }
 
 @media screen and (max-width: 800px) {

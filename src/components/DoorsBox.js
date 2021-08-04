@@ -2,13 +2,19 @@ import React, { useEffect, useState } from "react";
 
 import styles from "./DoorsBox.module.css";
 
+import door from "../assets/door.jpg";
 import goat from "../assets/goat.jpg";
 import car from "../assets/car.jpg";
 
-const goatId = "/static/media/goat.feb0a1a2.jpg";
-const carId = "/static/media/car.0636021d.jpg";
+const prizesArr = ["car", "goat", "goat"];
 
-const doorArr = [car, goat, goat];
+const doorsArr = ["doorone", "doortwo", "doorthree"];
+
+const doorsObject = {
+  0: "doorone",
+  1: "doortwo",
+  2: "doorthree",
+};
 
 function shuffleArray(a) {
   for (let i = a.length - 1; i > 0; i--) {
@@ -19,63 +25,121 @@ function shuffleArray(a) {
 }
 
 const DoorsBox = () => {
-  const [prizes, setPrizes] = useState(doorArr);
+  const [prizes, setPrizes] = useState(prizesArr);
   const [clickCount, setClickCount] = useState(0);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [isFlipped, setIsFlipped] = useState("");
+  const [isActive, setIsActive] = useState("");
 
   const clickHandler = (e) => {
     if (clickCount === 0) {
-      console.log(clickCount);
-      console.log(prizes);
+      let clickedId = e.target.id;
+      setIsActive(e.target.id);
+      let newArr = doorsArr
+        .filter((e) => e !== clickedId)
+        .map((item) =>
+          item
+            .replace("doorone", 0)
+            .replace("doortwo", 1)
+            .replace("doorthree", 2)
+        );
+      let randomValue = newArr[Math.floor(Math.random() * newArr.length)];
+      let randomNumber = parseInt(randomValue, 10);
       setClickCount(clickCount + 1);
+      if (prizes[randomNumber] === "goat") {
+        setIsFlipped(doorsObject[randomNumber]);
+      } else if (prizes[randomNumber] === "car") {
+        console.log("fuck you");
+      }
     } else if (clickCount === 1) {
-      console.log(clickCount);
+      setIsActive(e.target.id);
       setClickCount(clickCount + 1);
     } else if (clickCount > 1) {
-      console.log(clickCount);
       setClickCount(clickCount + 1);
-      console.log(e.target.id);
     }
   };
 
   useEffect(() => {
     setPrizes(shuffleArray(prizes));
-    setIsLoaded(true);
   }, []);
 
   return (
     <div className={styles["doors-box"]}>
-      <div className={styles["door"]}>
-        {isLoaded ? (
+      <div
+        className={
+          isActive.includes("doorone")
+            ? styles["active-door"]
+            : styles["inactive-door"]
+        }
+      >
+        {isFlipped.includes("doorone") ? (
+          <img
+            id="prizeone"
+            className={styles["image"]}
+            src={prizes[0] === "goat" ? goat : car}
+            alt={prizes[0]}
+            onClick={clickHandler}
+          />
+        ) : (
           <img
             id="doorone"
             className={styles["image"]}
-            src={prizes[0]}
+            src={door}
+            alt={"door"}
             onClick={clickHandler}
           />
-        ) : null}
+        )}
       </div>
 
-      <div className={styles["door"]}>
-        {isLoaded ? (
+      <div
+        className={
+          isActive.includes("doortwo")
+            ? styles["active-door"]
+            : styles["inactive-door"]
+        }
+      >
+        {isFlipped.includes("doortwo") ? (
+          <img
+            id="prizetwo"
+            className={styles["image"]}
+            src={prizes[1] === "goat" ? goat : car}
+            alt={prizes[1]}
+            onClick={clickHandler}
+          />
+        ) : (
           <img
             id="doortwo"
             className={styles["image"]}
-            src={prizes[1]}
+            src={door}
+            alt={"door"}
             onClick={clickHandler}
           />
-        ) : null}
+        )}
       </div>
 
-      <div className={styles["door"]}>
-        {isLoaded ? (
+      <div
+        className={
+          isActive.includes("doorthree")
+            ? styles["active-door"]
+            : styles["inactive-door"]
+        }
+      >
+        {isFlipped.includes("doorthree") ? (
+          <img
+            id="prizethree"
+            className={styles["image"]}
+            src={prizes[2] === "goat" ? goat : car}
+            alt={prizes[2]}
+            onClick={clickHandler}
+          />
+        ) : (
           <img
             id="doorthree"
             className={styles["image"]}
-            src={prizes[2]}
+            src={door}
+            alt={"door"}
             onClick={clickHandler}
           />
-        ) : null}
+        )}
       </div>
     </div>
   );
