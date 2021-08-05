@@ -29,11 +29,12 @@ const DoorsBox = () => {
   const [clickCount, setClickCount] = useState(0);
   const [isFlipped, setIsFlipped] = useState("");
   const [isActive, setIsActive] = useState("");
+  
 
   const clickHandler = (e) => {
     if (clickCount === 0) {
       let clickedId = e.target.id;
-      setIsActive(e.target.id);
+      setIsActive(clickedId);
       let newArr = doorsArr
         .filter((e) => e !== clickedId)
         .map((item) =>
@@ -47,14 +48,23 @@ const DoorsBox = () => {
       setClickCount(clickCount + 1);
       if (prizes[randomNumber] === "goat") {
         setIsFlipped(doorsObject[randomNumber]);
+        console.log("first option");
       } else if (prizes[randomNumber] === "car") {
-        console.log("fuck you");
+        setIsFlipped(
+          doorsObject[newArr.filter((item) => item !== randomNumber.toString())]
+        );
+        console.log("second option");
       }
+
     } else if (clickCount === 1) {
       setIsActive(e.target.id);
+      setIsFlipped("dooronedoortwodoorthree")
       setClickCount(clickCount + 1);
     } else if (clickCount > 1) {
-      setClickCount(clickCount + 1);
+      setClickCount(0);
+      setIsFlipped("")
+      setIsActive("")
+      setPrizes(shuffleArray(prizes));
     }
   };
 
