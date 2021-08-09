@@ -1,9 +1,9 @@
 import "./App.css";
-import DoorsBox from './components/DoorsBox'
+import MontyHall from './components/MontyHall'
 
 function App() {
   return <div className="App">
-<DoorsBox />
+<MontyHall />
   </div>;
 }
 
