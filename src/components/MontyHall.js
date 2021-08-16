@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Flip from "react-reveal/Flip";
 
 import styles from "./MontyHall.module.css";
 
@@ -52,8 +53,9 @@ but below is the click handler that allows the
 user to select an initial closed door and then reveals
 a goat behind one of the two remaining doors.
 One of the two doors the user did not select is
-rabdomly chosen; If the randomly chosen door has a goat,
-it is opened. If it has the car, the other door is opened.*/
+randomly chosen; If the randomly chosen door has a goat,
+it is opened. If it has the car, the other door (containing a goat)
+ is opened.*/
 
   const doorClickHandler = (e) => {
     if (clickCount === 0) {
@@ -123,12 +125,10 @@ it is opened. If it has the car, the other door is opened.*/
   }, []);
 
   return (
-    <div className={styles["container"]}onClick={resetHandler}>
-      <h1>
-        Wins: {wins} Losses: {losses}
-      </h1>
-      <h2>Stay Win Rate : {isNaN(stayWinRate) ? 0 : stayWinRate}%</h2>
-      <h2>Switch Win Rate : {isNaN(switchWinRate) ? 0 : switchWinRate}%</h2>
+    <div className={styles["container"]} onClick={resetHandler}>
+      <div className={styles["prompter"]}>
+        <h1>{display}</h1>
+      </div>
       <div className={styles["doors-box"]}>
         <div
           className={
@@ -138,12 +138,14 @@ it is opened. If it has the car, the other door is opened.*/
           }
         >
           {isFlipped.includes("doorone") ? (
-            <img
-              id="prizeone"
-              className={styles["image"]}
-              src={prizes[0] === "goat" ? goat : car}
-              alt={prizes[0]}
-            />
+            <Flip left>
+              <img
+                id="prizeone"
+                className={styles["image"]}
+                src={prizes[0] === "goat" ? goat : car}
+                alt={prizes[0]}
+              />
+            </Flip>
           ) : (
             <img
               id="doorone"
@@ -163,12 +165,14 @@ it is opened. If it has the car, the other door is opened.*/
           }
         >
           {isFlipped.includes("doortwo") ? (
-            <img
-              id="prizetwo"
-              className={styles["image"]}
-              src={prizes[1] === "goat" ? goat : car}
-              alt={prizes[1]}
-            />
+            <Flip left>
+              <img
+                id="prizetwo"
+                className={styles["image"]}
+                src={prizes[1] === "goat" ? goat : car}
+                alt={prizes[1]}
+              />
+            </Flip>
           ) : (
             <img
               id="doortwo"
@@ -188,12 +192,15 @@ it is opened. If it has the car, the other door is opened.*/
           }
         >
           {isFlipped.includes("doorthree") ? (
-            <img
-              id="prizethree"
-              className={styles["image"]}
-              src={prizes[2] === "goat" ? goat : car}
-              alt={prizes[2]}
-            />
+            <Flip left>
+              {" "}
+              <img
+                id="prizethree"
+                className={styles["image"]}
+                src={prizes[2] === "goat" ? goat : car}
+                alt={prizes[2]}
+              />
+            </Flip>
           ) : (
             <img
               id="doorthree"
@@ -205,7 +212,13 @@ it is opened. If it has the car, the other door is opened.*/
           )}
         </div>
       </div>
-      <h2>{display}</h2>
+      <div className={styles["score-board"]}>
+        <h2>
+          Wins: {wins} Losses: {losses}
+        </h2>
+        <h3>Stay Win Rate : {isNaN(stayWinRate) ? 0 : stayWinRate}%</h3>
+        <h3>Switch Win Rate : {isNaN(switchWinRate) ? 0 : switchWinRate}%</h3>
+      </div>
     </div>
   );
 };
