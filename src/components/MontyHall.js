@@ -123,7 +123,7 @@ it is opened. If it has the car, the other door is opened.*/
   }, []);
 
   return (
-    <div onClick={resetHandler}>
+    <div className={styles["container"]}onClick={resetHandler}>
       <h1>
         Wins: {wins} Losses: {losses}
       </h1>
