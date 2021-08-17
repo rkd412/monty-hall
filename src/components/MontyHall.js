@@ -233,7 +233,13 @@ it is opened. If it has the car, the other door (containing a goat)
       <div>
         <h4 className={styles["learn-more"]}>
           Learn more about the Monty Hall problem{" "}
-          <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">here</a>!
+          <a
+            href="https://en.wikipedia.org/wiki/Monty_Hall_problem"
+            target="_blank"
+          >
+            here
+          </a>
+          !
         </h4>
       </div>
     </div>
