@@ -38,7 +38,9 @@ const MontyHall = () => {
   const [isActive, setIsActive] = useState("");
   const [wins, setWins] = useState(0);
   const [losses, setLosses] = useState(0);
-  const [display, setDisplay] = useState("Choose a door!");
+  const [display, setDisplay] = useState(
+    <h1 className={styles["prompter"]}>Choose a door!</h1>
+  );
   const [stays, setStays] = useState(0);
   const [switches, setSwitches] = useState(0);
   const [staysWins, setStaysWins] = useState(0);
@@ -59,7 +61,7 @@ it is opened. If it has the car, the other door (containing a goat)
 
   const doorClickHandler = (e) => {
     if (clickCount === 0) {
-      setDisplay("Switch or stay?");
+      setDisplay(<h1 className={styles["prompter"]}>Switch or stay?</h1>);
       let clickedId = e.target.id;
       setClickedDoor(clickedId);
       setIsActive(clickedId);
@@ -100,8 +102,19 @@ it is opened. If it has the car, the other door (containing a goat)
         : setSwitches(switches + 1);
       setIsFlipped("dooronedoortwodoorthree");
       prizes[getKeyByValue(doorsObject, clickedId)] === "car"
-        ? setWins(wins + 1) || setDisplay("Congratulations! Try again?")
-        : setLosses(losses + 1) || setDisplay("Sorry ... try again?");
+        ? setWins(wins + 1) ||
+          setDisplay(
+            <h1 className={styles["prompter"]}>
+              <span className={styles["winner"]}>Congratulations!</span> Try
+              again?
+            </h1>
+          )
+        : setLosses(losses + 1) ||
+          setDisplay(
+            <h1 className={styles["prompter"]}>
+              <span className={styles["loser"]}>Sorry</span> ... try again?
+            </h1>
+          );
     }
     setClickCount(clickCount + 1);
   };
@@ -111,7 +124,7 @@ it is opened. If it has the car, the other door (containing a goat)
       setClickCount(0);
       setIsFlipped("");
       setIsActive("");
-      setDisplay("Choose a door!");
+      setDisplay(<h1 className={styles["prompter"]}>Choose a door!</h1>);
       setPrizes(shuffleArray(prizes));
       setClickedDoor("");
     }
@@ -126,9 +139,7 @@ it is opened. If it has the car, the other door (containing a goat)
 
   return (
     <div className={styles["container"]} onClick={resetHandler}>
-      <div className={styles["prompter"]}>
-        <h1>{display}</h1>
-      </div>
+      <div className={styles["prompter"]}>{display}</div>
       <div className={styles["doors-box"]}>
         <div
           className={
@@ -218,6 +229,12 @@ it is opened. If it has the car, the other door (containing a goat)
         </h2>
         <h3>Stay Win Rate : {isNaN(stayWinRate) ? 0 : stayWinRate}%</h3>
         <h3>Switch Win Rate : {isNaN(switchWinRate) ? 0 : switchWinRate}%</h3>
+      </div>
+      <div>
+        <h4 className={styles["learn-more"]}>
+          Learn more about the Monty Hall problem{" "}
+          <a href="https://en.wikipedia.org/wiki/Monty_Hall_problem">here</a>!
+        </h4>
       </div>
     </div>
   );

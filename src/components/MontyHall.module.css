@@ -5,7 +5,15 @@
 }
 
 .prompter {
-  margin-top: 5vh;
+  margin-top: 2vh;
+}
+
+.winner {
+  color: green;
+}
+
+.loser {
+  color: red;
 }
 
 .doors-box {
@@ -49,6 +57,24 @@
   margin-top: 3vh;
 }
 
+.learn-more {
+  margin-top: 2vh;
+}
+
+a{
+  text-decoration: underline;
+}
+
+a:visited { 
+  text-decoration: none;
+  color: black;
+ }
+
+ a:hover { 
+  text-decoration: none;
+  color: grey;
+ }
+
 @media screen and (max-width: 800px) {
   .container {
     background: #f2f3f4;
@@ -60,7 +86,6 @@
 
   .prompter {
     margin-bottom: 5vh;
-    background: pink;
     height: 15vh;
   }
 
