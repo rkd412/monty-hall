@@ -150,7 +150,8 @@ it is opened. If it has the car, the other door (containing a goat)
         >
           {isFlipped.includes("doorone") ? (
             <Flip left>
-              <img
+              <input
+                type="image"
                 id="prizeone"
                 className={styles["image"]}
                 src={prizes[0] === "goat" ? goat : car}
@@ -158,7 +159,8 @@ it is opened. If it has the car, the other door (containing a goat)
               />
             </Flip>
           ) : (
-            <img
+            <input
+              type="image"
               id="doorone"
               className={styles["image"]}
               src={door}
@@ -177,7 +179,8 @@ it is opened. If it has the car, the other door (containing a goat)
         >
           {isFlipped.includes("doortwo") ? (
             <Flip left>
-              <img
+              <input
+                type="image"
                 id="prizetwo"
                 className={styles["image"]}
                 src={prizes[1] === "goat" ? goat : car}
@@ -185,7 +188,8 @@ it is opened. If it has the car, the other door (containing a goat)
               />
             </Flip>
           ) : (
-            <img
+            <input
+              type="image"
               id="doortwo"
               className={styles["image"]}
               src={door}
@@ -205,7 +209,8 @@ it is opened. If it has the car, the other door (containing a goat)
           {isFlipped.includes("doorthree") ? (
             <Flip left>
               {" "}
-              <img
+              <input
+                type="image"
                 id="prizethree"
                 className={styles["image"]}
                 src={prizes[2] === "goat" ? goat : car}
@@ -213,7 +218,8 @@ it is opened. If it has the car, the other door (containing a goat)
               />
             </Flip>
           ) : (
-            <img
+            <input
+              type="image"
               id="doorthree"
               className={styles["image"]}
               src={door}
