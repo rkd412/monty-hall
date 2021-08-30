@@ -27,7 +27,7 @@
 .active-door {
   background: #1088ce;
   width: 21vw;
-  height: 61vh;
+  height: 62vh;
   display: flex;
   justify-content: center;
   z-index: 9999;
@@ -37,7 +37,7 @@
 .inactive-door {
   background: #778899;
   width: 21vw;
-  height: 61vh;
+  height: 62vh;
   display: flex;
   justify-content: center;
   z-index: 9999;

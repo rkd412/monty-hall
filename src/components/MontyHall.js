@@ -135,7 +135,7 @@ it is opened. If it has the car, the other door (containing a goat)
 
   useEffect(() => {
     setPrizes(shuffleArray(prizes));
-  }, []);
+  }, [prizes]);
 
   return (
     <div className={styles["container"]} onClick={resetHandler}>
@@ -242,6 +242,7 @@ it is opened. If it has the car, the other door (containing a goat)
           <a
             href="https://en.wikipedia.org/wiki/Monty_Hall_problem"
             target="_blank"
+            rel="noopener noreferrer"
           >
             here
           </a>
