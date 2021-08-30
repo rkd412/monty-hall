@@ -162,7 +162,7 @@ it is opened. If it has the car, the other door (containing a goat)
             <input
               type="image"
               id="doorone"
-              className={styles["image"]}
+              className={styles["image-door"]}
               src={door}
               alt={"door"}
               onClick={doorClickHandler}
@@ -191,7 +191,7 @@ it is opened. If it has the car, the other door (containing a goat)
             <input
               type="image"
               id="doortwo"
-              className={styles["image"]}
+              className={styles["image-door"]}
               src={door}
               alt={"door"}
               onClick={doorClickHandler}
@@ -221,7 +221,7 @@ it is opened. If it has the car, the other door (containing a goat)
             <input
               type="image"
               id="doorthree"
-              className={styles["image"]}
+              className={styles["image-door"]}
               src={door}
               alt={"door"}
               onClick={doorClickHandler}

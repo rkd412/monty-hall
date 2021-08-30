@@ -54,6 +54,23 @@
   border-radius: 1%;
 }
 
+.image-door {
+  width: 20vw;
+  height: 60vh;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+  z-index: -1;
+  border-radius: 1%;
+  transition: all 0.2s ease-in-out;
+}
+
+.image-door:hover {
+  text-decoration: none;
+  color: #d2c2a9;
+  transform: scale(1.02);
+}
+
 .score-board {
   margin-top: 3vh;
 }
