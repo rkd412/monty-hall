@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
+import Fade from 'react-reveal/Fade';
+import { FaInfoCircle, FaRegWindowClose } from "react-icons/fa";
 
 import styles from "./MontyHall.module.css";
 
@@ -46,6 +48,7 @@ const MontyHall = () => {
   const [staysWins, setStaysWins] = useState(0);
   const [switchesWins, setSwitchesWins] = useState(0);
   const [clickedDoor, setClickedDoor] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
 
   const stayWinRate = Math.ceil((staysWins / stays) * 100);
   const switchWinRate = Math.ceil((switchesWins / switches) * 100);
@@ -130,6 +133,10 @@ it is opened. If it has the car, the other door (containing a goat)
     }
   };
 
+  const infoHandler = () => {
+    setIsOpen(isOpen === true ? false : true);
+  };
+
   /*This shuffles the prizes behind the three
   doors when the page loads*/
 
@@ -139,7 +146,19 @@ it is opened. If it has the car, the other door (containing a goat)
 
   return (
     <div className={styles["container"]} onClick={resetHandler}>
-      <div className={styles["prompter"]}>{display}</div>
+      <Fade right><div
+        onClick={infoHandler}
+        className={isOpen ? styles["open-modal"] : styles["closed-modal"]}
+      >
+        <div className={styles["text-box"]}>
+          <p>Hello, World!</p>
+         <div className={styles["text-box-close"]}><FaRegWindowClose/></div>
+        </div>
+      </div></Fade>
+      <div className={styles["prompter"]}>
+        {display}
+        <div onClick={infoHandler} className={styles["info"]}><FaInfoCircle/></div>
+      </div>
       <div className={styles["doors-box"]}>
         <div
           className={
