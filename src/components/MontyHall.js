@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Flip from "react-reveal/Flip";
-import Fade from 'react-reveal/Fade';
+import Fade from "react-reveal/Fade";
 import { FaInfoCircle, FaRegWindowClose } from "react-icons/fa";
 
 import styles from "./MontyHall.module.css";
@@ -146,18 +146,44 @@ it is opened. If it has the car, the other door (containing a goat)
 
   return (
     <div className={styles["container"]} onClick={resetHandler}>
-      <Fade right><div
-        onClick={infoHandler}
-        className={isOpen ? styles["open-modal"] : styles["closed-modal"]}
-      >
-        <div className={styles["text-box"]}>
-          <p>Hello, World!</p>
-         <div className={styles["text-box-close"]}><FaRegWindowClose/></div>
+      <Fade right>
+        <div
+          onClick={infoHandler}
+          className={isOpen ? styles["open-modal"] : styles["closed-modal"]}
+        >
+          <div className={styles["text-box"]}>
+            <div className={styles["text"]}>
+            <p>
+              The Monty Hall problem initially reached fame (or infamy) when
+              Marilyn vos Savant responded to a question from reader Craig F.
+              Whitaker in her column “Ask Marilyn” for Parade magazine. Whitaker
+              posited, “Suppose you're on a game show, and you're given the
+              choice of three doors: Behind one door is a car; behind the
+              others, goats. You pick a door, say No. 1, and the host, who knows
+              what's behind the doors, opens another door, say No. 3, which has
+              a goat. He then says to you, "Do you want to pick door No. 2?" Is
+              it to your advantage to switch your choice?” Savant correctly
+              responded that of course you should! Contestants who switched had
+              a 2/3 chance of winning the car while those who stayed a mere 1/3
+              chance. The backlash to her conclusion was immediate from around
+              10,000 readers including about about 1,000 PhDs sending her mail
+              decisively claiming she as wrong and decrying the state of the US
+              education system. Even when presented with mathematical proofs and
+              computer simulations, many continued to refuse to be swayed. This
+              is another such simulation and I hope you enjoy it!
+            </p>
+            </div>
+            <div className={styles["text-box-close"]}>
+              <FaRegWindowClose />
+            </div>
+          </div>
         </div>
-      </div></Fade>
+      </Fade>
       <div className={styles["prompter"]}>
         {display}
-        <div onClick={infoHandler} className={styles["info"]}><FaInfoCircle/></div>
+        <div onClick={infoHandler} className={styles["info"]}>
+          <FaInfoCircle />
+        </div>
       </div>
       <div className={styles["doors-box"]}>
         <div

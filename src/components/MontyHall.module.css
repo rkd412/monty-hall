@@ -131,15 +131,23 @@ a:hover {
 
 .text-box:hover {
   cursor: pointer;
-  background: rgba(173, 173, 173, 0.9);
-  color: black;
+  background: rgba(107, 107, 107, 0.9);
+  color: white;
 }
 
 .text-box-close {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  padding: 1.5vh;
+  top: 10px;
+  right: 10px;
+}
+
+.text {
+  height: 60vh;
+  width: 60vw;
+  font-size: 28px;
+  text-align: center;
+  padding: 1vh;
+  margin-top: 15vh;
 }
 
 .closed-modal {
@@ -162,16 +170,17 @@ a:hover {
   }
 
   .doors-box {
-    background: #bfc1c2;
+    background: #032b3f;
     display: flex;
     justify-content: space-around;
     padding: 1vh;
+    margin: 1vh;
   }
 
   .active-door {
     background: #1088ce;
-    width: 31vw;
-    height: 31vh;
+    width: 30vw;
+    height: 29vh;
     display: flex;
     justify-content: center;
     z-index: 9998;
@@ -180,8 +189,8 @@ a:hover {
 
   .inactive-door {
     background: #778899;
-    width: 31vw;
-    height: 31vh;
+    width: 30vw;
+    height: 29vh;
     display: flex;
     justify-content: center;
     z-index: 9998;
@@ -190,7 +199,7 @@ a:hover {
 
   .image {
     width: 30vw;
-    height: 30vh;
+    height: 29vh;
     margin: auto;
     display: block;
     cursor: pointer;
@@ -198,7 +207,49 @@ a:hover {
     border-radius: 1%;
   }
 
+  .image-door {
+    width: 28vw;
+    height: 28vh;
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    z-index: -1;
+    border-radius: 1%;
+    transition: all 0.2s ease-in-out;
+  }
+
   .score-board {
     margin-top: 5vh;
+  }
+
+  .text-box {
+    background-color: rgba(223, 223, 223, 0.9);
+    height: 90vh;
+    width: 90vw;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    position: relative;
+    overflow: auto;
+  }
+  
+  .text-box-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .text {
+    height: 80vh;
+    width: 100%;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: justify;
+    margin-top: 5vh;
+    padding: 5vw;
+    overflow: auto;
   }
 }
