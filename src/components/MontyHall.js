@@ -163,7 +163,7 @@ it is opened. If it has the car, the other door (containing a goat)
               what's behind the doors, opens another door, say No. 3, which has
               a goat. He then says to you, "Do you want to pick door No. 2?" Is
               it to your advantage to switch your choice?” Savant correctly
-              responded that of course you should! Contestants who switched had
+              responded that of course you should switch! Contestants who switched had
               a 2/3 chance of winning the car while those who stayed a mere 1/3
               chance. The backlash to her conclusion was immediate from around
               10,000 readers including about about 1,000 PhDs sending her mail
