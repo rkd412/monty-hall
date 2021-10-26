@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-around;
   padding: 5vh;
-  box-shadow: inset 0px 0px 10px 10px #003f5f;
+  box-shadow: inset 0px 0px 10px 10px  #003f5f;
 }
 
 .active-door {
