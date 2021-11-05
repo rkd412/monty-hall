@@ -5,9 +5,9 @@ import { FaInfoCircle, FaRegWindowClose } from "react-icons/fa";
 
 import styles from "./MontyHall.module.css";
 
-import door from "../assets/door.jpg";
-import goat from "../assets/goat.jpg";
-import car from "../assets/car.jpg";
+import door from "../assets/door.webp";
+import goat from "../assets/goat.webp";
+import car from "../assets/car.webp";
 
 const prizesArr = ["car", "goat", "goat"];
 
@@ -60,7 +60,8 @@ a goat behind one of the two remaining doors.
 One of the two doors the user did not select is
 randomly chosen; If the randomly chosen door has a goat,
 it is opened. If it has the car, the other door (containing a goat)
- is opened.*/
+ is opened. This is intended to weed out bias in choosing an
+ unopened door by the computer*/
 
   const doorClickHandler = (e) => {
     if (clickCount === 0) {
