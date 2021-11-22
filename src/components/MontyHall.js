@@ -3,7 +3,7 @@ import Flip from "react-reveal/Flip";
 import Fade from "react-reveal/Fade";
 import { FaInfoCircle, FaRegWindowClose } from "react-icons/fa";
 
-import styles from "./MontyHall.module.css";
+import styles from "./MontyHall.module.scss";
 
 import door from "../assets/door.webp";
 import goat from "../assets/goat.webp";
