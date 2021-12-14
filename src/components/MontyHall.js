@@ -61,7 +61,7 @@ One of the two doors the user did not select is
 randomly chosen; If the randomly chosen door has a goat,
 it is opened. If it has the car, the other door (containing a goat)
  is opened. This is intended to weed out bias in choosing an
- unopened door by the computer*/
+ unopened door by the app*/
 
   const doorClickHandler = (e) => {
     if (clickCount === 0) {
@@ -168,8 +168,8 @@ it is opened. If it has the car, the other door (containing a goat)
                 switch! Contestants who switched had a 2/3 chance of winning the
                 car while those who stayed a mere 1/3 chance. The backlash to
                 her conclusion was immediate from around 10,000 readers
-                including about about 1,000 PhDs sending her mail decisively
-                claiming she as wrong and decrying the state of the US education
+                including about 1,000 PhDs sending her mail decisively
+                claiming she was wrong and decrying the state of the US education
                 system. Even when presented with mathematical proofs and
                 computer simulations, many continued to refuse to be swayed.
                 This is another such simulation and I hope you enjoy it!
